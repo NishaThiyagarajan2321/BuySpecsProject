@@ -1,0 +1,150 @@
+﻿@model IEnumerable<BuySpecsProject.Models.SPECS_DETAILS>
+
+@{
+    Layout = "~/Views/Shared/HOME_LAYOUT.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewSpecs</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .container {
+            width: 400px;
+            height: 400px;
+            box-shadow: 0 3px 16px 0 rgb(0 0 0 / 11%);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            margin: 10px;
+            padding: 30px 30px 20px 50px;
+            border-radius: 10px;
+            font-size: 16px;
+            background-color: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .type, .name, .width, .price, .size, .img {
+            text-transform: capitalize;
+        }
+
+        .price {
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        .cart.material-icons {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            display: flex;
+            width: 60px;
+            height: 60px;
+            justify-content: center;
+            align-items: center;
+            /*texr-align: center;*/
+            color: rgb(74, 74, 74);
+            outline: none;
+            cursor: pointer;
+            font-size: 40px;
+        }
+
+        body {
+            font-family: futurastd-book,helvetica neue,Helvetica,Arial,sans-serif;
+        }
+
+        p {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .cart:hover {
+            border-radius: 50%;
+            background-color: rgba(32, 33, 36, 0.059);
+        }
+
+        .img {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            background: #ffe6e6;
+        }
+
+        .img img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+        }
+
+        .name {
+            font-weight: 600;
+            font-size: 20px;
+            color: MediumSeaGreen;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    @*<p>
+        @Html.ActionLink("View Cart", "ViewCart")
+    </p>*@
+    <div class="container-wrapper">
+
+        @foreach (var item in Model)
+        {
+            <div class="container">
+                <div class="img"><img src="@Url.Content(item.SPECS_IMAGE)" /></div>
+                <div class="name"> @Html.DisplayFor(modelItem => item.SPECS_NAME)</div>
+                <div class="type"> @Html.DisplayFor(modelItem => item.FRAME_TYPE)</div>
+                <div class="cart material-icons">@Html.ActionLink("add_shopping_cart", "Add_to_cart", new { SPECS_ID = item.SPECS_ID })</div>
+                <div class="width">@Html.DisplayFor(modelItem => item.FRAME_WIDTH)</div>
+                <div class="price"> ₹ @Html.DisplayFor(modelItem => item.SPECS_PRICE)</div>
+                <div class="size"> @Html.DisplayFor(modelItem => item.FRAME_SIZE)</div>
+            </div>
+            <!--<tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SPECS_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SPECS_NAME)
+            </td>
+            <td>
+                <img src="@Url.Content(item.SPECS_IMAGE)" width="200" height="200" />-->
+            @*@Html.DisplayFor(modelItem => item.SPECS_IMAGE)*@
+            <!--</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FRAME_TYPE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FRAME_WIDTH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FRAME_SIZE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SPECS_PRICE)
+            </td>-->
+            @*<td>
+                        @Html.ActionLink("Add To Cart", "Add_to_cart", new { SPECS_ID = item.SPECS_ID })
+                    </td>
+                </tr>*@
+        }
+    </div>
+</body>
+</html>

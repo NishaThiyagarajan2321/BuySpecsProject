@@ -1,0 +1,102 @@
+﻿@model IEnumerable<BuySpecsProject.Models.ORDER_DETAILS>
+
+@{
+//Layout = null;
+//Layout = "~/Views/Shared/CUSTOMER_LAYOUT.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewOrderedDetails</title>
+    
+        <style>
+            body {
+                background-image: url('../../Images/bg..jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            h2 {
+                text-align: center;
+                background-color:palevioletred;
+            }
+            table{
+                background-color:darkgrey;
+            }
+
+        </style>
+</head>
+<body>
+    @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+    <h2 >ViewOrderedDetails</h2>
+    <table class="table">
+        <tr>
+            <th>
+            @Html.DisplayNameFor(model => model.ORDER_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SPECS_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FRAME_TYPE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LEFT_EYEPOWER)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RIGHT_EYEPOWER)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SPECS_PRICE)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.SPECS_DETAILS.SPECS_NAME)
+            </th>*@
+            @*<th>
+            @Html.DisplayNameFor(model => model.USERREGISTER.FIRSTNAME)
+        </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORDER_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SPECS_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FRAME_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LEFT_EYEPOWER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RIGHT_EYEPOWER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SPECS_PRICE)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.SPECS_DETAILS.SPECS_NAME)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.USERREGISTER.FIRSTNAME)
+        </td>*@
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ORDER_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ORDER_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ORDER_ID })
+        </td>*@
+    </tr>
+   }
+
+    </table>
+</body>
+</html>

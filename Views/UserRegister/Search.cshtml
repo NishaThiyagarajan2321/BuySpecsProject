@@ -1,0 +1,61 @@
+﻿@model IEnumerable<BuySpecsProject.Models.SPECS_DETAILS>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search</title>
+    <style>
+        body {
+            background-image: url('../../Images/bg..jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <div class="container">
+        <br /><br />
+        <label> Choose Type of Search</label>
+        <select id="searchBy" class="form-control">
+            <option value="SPECS_NAME"> Book Id</option>
+            
+        </select>
+        <br />
+        <label> Enter Key</label>
+        <div style="display:flex;">
+            <input class="form-control" id="search" />
+            <input class="btn btn-primary" type="submit" id="SearchBtn" value="Search" />
+        </div>
+        <br /><br />
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>SPECS_NAME</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody id="DataSearching">
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.SPECS_NAME</td>
+                       
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+</body>
+</html>

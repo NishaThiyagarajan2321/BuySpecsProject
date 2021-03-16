@@ -1,0 +1,90 @@
+﻿@model IEnumerable<BuySpecsProject.Models.SPECS_DETAILS>
+
+@{
+//Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+        <style>
+            body {
+                background-image: url('../../Images/bg..jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            h2 {
+                text-align: center;
+                background-color: palevioletred;
+            }
+
+            table {
+                background-color: darkgrey;
+            }
+       
+        </style>
+</head>
+<body>
+    @*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SPECS_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SPECS_IMAGE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FRAME_TYPE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FRAME_WIDTH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FRAME_SIZE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SPECS_PRICE)
+            </th>
+           
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SPECS_NAME)
+            </td>
+            <td>
+                <img src="@Url.Content(item.SPECS_IMAGE)" width="100" height="100" />
+                @*@Html.DisplayFor(modelItem => item.SPECS_IMAGE)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FRAME_TYPE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FRAME_WIDTH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FRAME_SIZE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SPECS_PRICE)
+            </td>
+            
+            <td>
+                @*@Html.ActionLink("UPDATE", "Edit", new { id=item.SPECS_ID })*@ 
+                @*@Html.ActionLink("Details", "Details", new { id=item.SPECS_ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.SPECS_ID })*@
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

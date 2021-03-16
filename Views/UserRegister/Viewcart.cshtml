@@ -1,0 +1,90 @@
+﻿@model IEnumerable<BuySpecsProject.Models.ADD_TO_CART>
+
+@{
+//Layout = null;
+//int total = 0;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Viewcart</title>
+        <style>
+            body {
+                background-image: url('../../Images/bg..jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            h2 {
+                text-align: center;
+                background-color: palevioletred;
+            }
+
+            table {
+                background-color: darkgrey;
+            }
+        </style>
+
+    </head>
+<body>
+    <h2>View Cart Details</h2>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SPECS_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SPECS_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QUANTITY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SPECS_PRICE)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SPECS_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SPECS_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QUANTITY)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SPECS_PRICE)
+                </td>
+                <td>@Html.ActionLink("ORDER", "OrderNow", new { /* id=item.PrimaryKey */ })</td>
+                <td>@Html.ActionLink("Remove from cart", "Remove_from_cart", new { id = item.SPECS_ID })</td>
+                @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>*@
+            </tr>
+        }
+
+
+    </table>
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+        </script>
+
+    }
+
+</body>
+</html>

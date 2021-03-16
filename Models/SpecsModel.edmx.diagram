@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f98722114fb448a1a3a1cb82b25fb985" Name="Diagram1">
+        <EntityTypeShape EntityType="OnlineSpecsDetailsModel.LOGINADMIN" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSpecsDetailsModel.ORDER_DETAILS" Width="1.5" PointX="5.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineSpecsDetailsModel.SPECS_DETAILS" Width="1.5" PointX="0.75" PointY="1" />
+        <AssociationConnector Association="OnlineSpecsDetailsModel.FK__ORDER_DET__SPECS__3C69FB99" />
+        <EntityTypeShape EntityType="OnlineSpecsDetailsModel.USERREGISTER" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="OnlineSpecsDetailsModel.ADD_TO_CART" Width="1.5" PointX="3" PointY="8.375" />
+        <AssociationConnector Association="OnlineSpecsDetailsModel.FK__ADD_TO_CA__SPECS__5CD6CB2B" />
+        <AssociationConnector Association="OnlineSpecsDetailsModel.FK__ADD_TO_CA__EMAIL__01142BA1" />
+        <AssociationConnector Association="OnlineSpecsDetailsModel.FK__ORDER_DET__EMAIL__02084FDA" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
